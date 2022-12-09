@@ -4,6 +4,28 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const hearts = document.querySelectorAll(".like-glyph");
+
+function likeCallback(e) {
+  const heart = e.target;
+  if (heart.innerText = '♡'){
+  mimicServerCall()
+    .then(function(){
+       heart.innerText = '♥';
+    })
+    }
+    else{
+      mimicServerCall()
+      .then(function(){
+        heart.innerText='♡';
+      })
+      
+    }
+}
+for (const heart of hearts) {
+  heart.addEventListener("click", likeCallback);
+}
+
 
 
 
